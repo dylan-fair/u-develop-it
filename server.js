@@ -1,13 +1,13 @@
 const express = require('express');
 const apiRoutes = require('./routes/apiRoutes');
 const db = require('./db/connections');
-const inputCheck = require('./utils/inputCheck');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 app.use('/api', apiRoutes);
 
 app.use((req, res) => {
